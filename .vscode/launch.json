@@ -1,0 +1,39 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Launch Day3",
+			"request": "launch",
+			"mainClass": "aoc.Day3",
+			"projectName": "advent-of-code-2022"
+		},
+		{
+			"type": "java",
+			"name": "Launch Day2",
+			"request": "launch",
+			"mainClass": "aoc.Day2",
+			"projectName": "advent-of-code-2022"
+		},
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Launch Day1",
+			"request": "launch",
+			"preLaunchTask": "maven-package",
+			"mainClass": "aoc.Day1",
+			"classPaths": [
+				"${cwd}/target/advent-of-code-2022-1.0-SNAPSHOT.jar"
+			],
+			"projectName": "advent-of-code-2022"
+		}
+	]
+}

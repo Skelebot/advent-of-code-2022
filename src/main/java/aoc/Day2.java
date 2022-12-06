@@ -1,7 +1,5 @@
 package aoc;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +24,7 @@ public class Day2 extends Puzzle {
 		return String.valueOf(sum);
 	}
 
-	public static void main(String[] args) throws URISyntaxException, IOException {
+	public static void main(String[] args) {
 		Puzzle puzzle = new Day2(Utils.readInput("/input2.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());

@@ -11,13 +11,13 @@ import utils.Utils;
 
 public class Day5 extends Puzzle {
 
-	static List<String> start;
-	static List<String> commands;
+	final List<String> start;
+	final List<String> commands;
 
 	public Day5(String input) {
 		super(input);
-		start = input.lines().takeWhile(s -> !s.startsWith(" 1")).collect(Collectors.toUnmodifiableList());
-		commands = input.lines().dropWhile(s -> !s.startsWith("m")).collect(Collectors.toUnmodifiableList());
+		this.start = input.lines().takeWhile(s -> !s.startsWith(" 1")).collect(Collectors.toUnmodifiableList());
+		this.commands = input.lines().dropWhile(s -> !s.startsWith("m")).collect(Collectors.toUnmodifiableList());
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class Day5 extends Puzzle {
 		return crates.move9001(commands);
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		Puzzle puzzle = new Day5(Utils.readInput("/input5.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());

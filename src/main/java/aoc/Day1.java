@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 import utils.Utils;
 
 public class Day1 extends Puzzle {
+	
 	List<Integer> sums;
 
 	public Day1(String input) {
@@ -26,7 +27,7 @@ public class Day1 extends Puzzle {
 		return sums.stream().limit(3).reduce(0, Integer::sum).toString();
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		Puzzle puzzle = new Day1(Utils.readInput("/input1.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());

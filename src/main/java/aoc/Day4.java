@@ -1,13 +1,12 @@
 package aoc;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import utils.Utils;
 
 public class Day4 extends Puzzle {
+
 	final List<Range[]> ranges;
 
 	public Day4(String input) {
@@ -25,7 +24,7 @@ public class Day4 extends Puzzle {
 		return String.valueOf(count);
 	}
 
-	public static void main(String[] args) throws URISyntaxException, IOException {
+	public static void main(String[] args) {
 		Puzzle puzzle = new Day4(Utils.readInput("/input4.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());

@@ -35,7 +35,6 @@ public class Day7 extends Puzzle {
 			}
 		}
 		tree.recalculateSizes();
-		tree.print(0);
 	}
 
 	private long sumSmall(Node node) {
@@ -71,7 +70,6 @@ public class Day7 extends Puzzle {
 		findDeletable(deletable, tree, needed);
 		return String.valueOf(deletable.stream().sorted().findFirst().get());
 	}
-
 
 	public static void main(String[] args) {
 		Puzzle puzzle = new Day7(Utils.readInput("/input7.txt"));
@@ -111,17 +109,4 @@ class Node {
 		size = children.stream().reduce(0l, (acc, n) -> acc + n.recalculateSizes(), Long::sum);
 		return size;
 	}
-
-	public void print(int ident) {
-		String desc = dir ? "dir" : "file";
-		System.out.println(" - " + name + " (" + desc + ", size=" + size + ")");
-
-		children.stream().forEach(child -> {
-			for (int i = 0; i < ident; i++) {
-				System.out.print("	");
-			}
-			child.print(ident + 1);
-		});
-	}
-
 }

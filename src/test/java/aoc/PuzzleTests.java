@@ -72,4 +72,12 @@ public class PuzzleTests {
 		Assert.assertEquals("95437", puzzle.part1());
 		Assert.assertEquals("24933642", puzzle.part2());
 	}
+
+	@Test
+	public void day8() {
+		Puzzle puzzle = new Day8(Utils.readInput("/test8.txt"));
+
+		Assert.assertEquals("21", puzzle.part1());
+		Assert.assertEquals("8", puzzle.part2());
+	}
 }

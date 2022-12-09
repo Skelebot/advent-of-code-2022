@@ -80,4 +80,15 @@ public class PuzzleTests {
 		Assert.assertEquals("21", puzzle.part1());
 		Assert.assertEquals("8", puzzle.part2());
 	}
+
+	@Test
+	public void day9() {
+		Puzzle puzzle1 = new Day9(Utils.readInput("/test9_1.txt"));
+
+		Assert.assertEquals("13", puzzle1.part1());
+		Assert.assertEquals("1", puzzle1.part2());
+
+		Puzzle puzzle2 = new Day9(Utils.readInput("/test9_2.txt"));
+		Assert.assertEquals("36", puzzle2.part2());
+	}
 }

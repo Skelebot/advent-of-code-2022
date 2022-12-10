@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Utils {
 
-	public static String readInput(String name) {
+	public static String read(String name) {
 		try {
 			byte[] bytes = Utils.class.getResourceAsStream(name).readAllBytes();
 			return new String(bytes, StandardCharsets.UTF_8);

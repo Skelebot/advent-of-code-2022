@@ -72,7 +72,7 @@ public class Day9 extends Puzzle {
 	}
 
 	public static void main(String[] args) {
-		Puzzle puzzle = new Day9(Utils.readInput("/input9.txt"));
+		Puzzle puzzle = new Day9(Utils.read("/input9.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());
 		System.out.println("Part 2: " + puzzle.part2());

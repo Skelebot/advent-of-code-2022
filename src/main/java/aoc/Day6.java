@@ -31,7 +31,7 @@ public class Day6 extends Puzzle {
 	}
 
 	public static void main(String[] args) {
-		Puzzle puzzle = new Day6(Utils.readInput("/input6.txt"));
+		Puzzle puzzle = new Day6(Utils.read("/input6.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());
 		System.out.println("Part 2: " + puzzle.part2());

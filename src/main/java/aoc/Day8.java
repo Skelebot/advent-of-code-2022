@@ -80,7 +80,7 @@ public class Day8 extends Puzzle {
 	}
 
 	public static void main(String[] args) {
-		Puzzle puzzle = new Day8(Utils.readInput("/input8.txt"));
+		Puzzle puzzle = new Day8(Utils.read("/input8.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());
 		System.out.println("Part 2: " + puzzle.part2());

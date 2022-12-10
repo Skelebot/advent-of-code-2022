@@ -55,7 +55,7 @@ public class Day10 extends Puzzle {
 		Puzzle puzzle = new Day10(Utils.read("/input10.txt"));
 
 		System.out.println("Part 1: " + puzzle.part1());
-		System.out.println("Part 2: " + puzzle.part2());
+		System.out.println("Part 2: \n" + puzzle.part2().replace(".", " "));
 	}
 }
 

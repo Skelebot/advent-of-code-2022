@@ -107,4 +107,12 @@ public class PuzzleTests {
 		Assert.assertEquals("10605", puzzle.part1());
 		Assert.assertEquals("2713310158", puzzle.part2());
 	}
+
+	@Test
+	public void day12() {
+		Puzzle puzzle = new Day12(Utils.read("/test12.txt"));
+
+		Assert.assertEquals("31", puzzle.part1());
+		Assert.assertEquals("29", puzzle.part2());
+	}
 }

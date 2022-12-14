@@ -123,4 +123,12 @@ public class PuzzleTests {
 		Assert.assertEquals("13", puzzle.part1());
 		Assert.assertEquals("140", puzzle.part2());
 	}
+
+	@Test
+	public void day14() {
+		Puzzle puzzle = new Day14(Utils.read("/test14.txt"));
+
+		Assert.assertEquals("24", puzzle.part1());
+		Assert.assertEquals("93", puzzle.part2());
+	}
 }

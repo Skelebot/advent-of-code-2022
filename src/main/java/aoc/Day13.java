@@ -2,13 +2,8 @@ package aoc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Stack;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.Comparator;
 import java.util.stream.Collectors;
 import utils.Utils;
 
@@ -36,26 +31,11 @@ public class Day13 extends Puzzle {
 
 	@Override
 	public String part2() {
-		this.all.add(new Node("[[2]]", null));
-		this.all.add(new Node("[[6]]", null));
-		int len = all.size();
-		boolean swapped = true;
-		while(swapped) {
-			swapped = false;
-			for(int i = 1; i < len; i++) {
-				Pair p = new Pair(this.all.get(i-1), this.all.get(i));
-				if(!p.compare()) {
-					Collections.swap(this.all, i-1, i);
-					swapped = true;
-				}
-			}
-		}
-		int mul = 1;
-		for(int i = 0; i < len; i++) {
-			String s = this.all.get(i).toString();
-			if(s.equals("[[6,],]") || s.equals("[[2,],]")) mul *= (i+1);
-		}
-		return String.valueOf(mul);
+		Node divider1 = new Node("[[2]]", null);
+		long less1 = this.all.stream().filter(n -> new Pair(n, divider1).compare()).count() + 1;
+		Node divider2 = new Node("[[6]]", null);
+		long less2 = this.all.stream().filter(n -> new Pair(n, divider2).compare()).count() + 2;
+		return String.valueOf(less1 * less2);
 	}
 
 	public static void main(String[] args) {
@@ -110,7 +90,6 @@ public class Day13 extends Puzzle {
 				} else if (rn.single) {
 					rn = new Node(List.of(rn.value), rn.parent);
 				}
-				// both values are lists
 				int ret = compare(ln.children, rn.children);
 				if (ret == -1)
 					continue;
@@ -158,15 +137,14 @@ public class Day13 extends Puzzle {
 					String sub = line.substring(start, closing + 1);
 					this.children.add(new Node(sub, this));
 					start = closing + 2;
-				} else if (line.charAt(start) == ']') {
-					int end = line.indexOf(',', start);
-					if (end == -1)
-						end = line.length() - 1;
-					start = end + 1;
 				} else {
 					int end = line.indexOf(',', start);
 					if (end == -1)
 						end = line.length() - 1;
+					if (line.charAt(start) == ']') {
+						start = end + 1;
+						continue;
+					}
 					String sub = line.substring(start, end);
 					this.children.add(new Node(Integer.parseInt(sub), this));
 					start = end + 1;
@@ -184,41 +162,7 @@ public class Day13 extends Puzzle {
 				if (lvl == 0)
 					return i;
 			}
-			System.err.println("Parenthese not found");
 			return -1;
-		}
-
-		@Override
-		public String toString() {
-			String a = "";
-			if (this.single) {
-				return String.valueOf(this.value);
-			} else if (this.children.isEmpty()) {
-				return "[]";
-			} else {
-				a += "[";
-				for (Node child : this.children) {
-					a += child.toString();
-					a += ",";
-				}
-				a += "]";
-			}
-			return a;
-		}
-
-		public void print() {
-			if (this.single) {
-				System.out.print(this.value);
-			} else if (this.children.isEmpty()) {
-				System.out.print("[]");
-			} else {
-				System.out.print("[");
-				for (Node child : this.children) {
-					child.print();
-					System.out.print(",");
-				}
-				System.out.print("]");
-			}
 		}
 	}
 }

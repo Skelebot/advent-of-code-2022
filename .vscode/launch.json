@@ -6,6 +6,13 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "Launch Day14",
+			"request": "launch",
+			"mainClass": "aoc.Day14",
+			"projectName": "advent-of-code-2022"
+		},
+		{
+			"type": "java",
 			"name": "Launch Day13",
 			"request": "launch",
 			"mainClass": "aoc.Day13",
